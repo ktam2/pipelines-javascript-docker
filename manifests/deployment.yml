@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ktampipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ktampipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: ktampipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: ktampipelinesjavascriptdocker 
+          image: ktamcr01.azurecr.io/ktampipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
